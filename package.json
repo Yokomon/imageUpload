@@ -1,0 +1,22 @@
+{
+  "name": "imageupload",
+  "version": "1.0.0",
+  "description": "Node application used to upload images to the cloudinary server",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yokomon/imageUpload.git"
+  },
+  "author": "Yokomon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yokomon/imageUpload/issues"
+  },
+  "homepage": "https://github.com/Yokomon/imageUpload#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
