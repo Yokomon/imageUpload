@@ -1,6 +1,7 @@
 const express = require("express"),
   app = express(),
-  mongoose = require("mongoose");
+  mongoose = require("mongoose"),
+  router = require("./routes/index");
 require("dotenv").config();
 MONGO_URI = process.env.MONGO_URI;
 
@@ -19,6 +20,9 @@ db.on("open", () => {
 app
   .use(express.urlencoded({ extended: false }))
   .use(express.json())
+
+  //Index route
+  .use("/", router)
   .set("port", process.env.PORT || 3000)
   .listen(app.get("port"), () => {
     console.log(`Server running at http://localhost:${app.get("port")}`);

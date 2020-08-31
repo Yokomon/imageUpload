@@ -4,6 +4,7 @@
   "description": "Node application used to upload images to the cloudinary server",
   "main": "main.js",
   "scripts": {
+    "start": "nodemon main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
