@@ -6,6 +6,12 @@ const mongoose = require("mongoose"),
         type: String,
         required: true,
       },
+      imageUrl: {
+        type: String,
+      },
+      imageId: {
+        type: String,
+      },
       clientId: {
         type: Number,
         required: true,
@@ -22,4 +28,4 @@ const mongoose = require("mongoose"),
     }
   );
 
-module.exports = mongoose.model("imageModel", imageSchema);
+module.exports = mongoose.model("Images", imageSchema);

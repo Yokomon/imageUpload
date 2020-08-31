@@ -5,7 +5,7 @@ const express = require("express"),
 require("dotenv").config();
 MONGO_URI = process.env.MONGO_URI;
 
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -22,8 +22,8 @@ app
   .use(express.json())
 
   //Index route
-  .use("/", router)
-  .set("port", process.env.PORT || 3000)
+  .use("/images", router)
+  .set("port", process.env.PORT || 5000)
   .listen(app.get("port"), () => {
     console.log(`Server running at http://localhost:${app.get("port")}`);
   });
