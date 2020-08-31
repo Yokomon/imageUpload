@@ -22,6 +22,25 @@
 npm install
 ```
 
+## Pre-requisite
+
+```sh
+  npm >= 6.14.6
+  node >= 12.18.3
+```
+
+## ENV
+
+The environment variables must be set before usage
+
+```sh
+CLOUD_NAME = Your Cloudinary account name
+MONGO_URI = Your MongoDb connection string
+API_KEY = This is gotten from your cloudinary account
+API_SECRET = This is also gotten from your cloudinary account
+PORT = Set to any preferred port of your choice
+```
+
 ## Usage
 
 ```sh
