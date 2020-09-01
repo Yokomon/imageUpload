@@ -1,6 +1,7 @@
-var imageModel = require("../models/imageModel");
+const imageModel = require("../models/imageModel"),
+  ObjectId = require("mongodb").ObjectId;
 //IMPORT CLOUDINARY CONFIG
-var cloud = require("../config/cloudConfig");
+const cloud = require("../config/cloudConfig");
 
 module.exports = {
   createImage: (req, res) => {
@@ -23,7 +24,7 @@ module.exports = {
           imageId: "",
         };
         cloud.uploads(attempt.imageUrl).then((result) => {
-          var imageDetails = {
+          let imageDetails = {
             imageName: req.files[0].originalname,
             imageUrl: result.url,
             imageId: result.id,
@@ -63,6 +64,24 @@ module.exports = {
         res.json({
           success: false,
           message: `Could not fetch images because: ${err.message}`,
+        });
+      });
+  },
+  // Fetch single image file in the DB
+  showImage: (req, res) => {
+    imageModel
+      .findOne({ _id: new ObjectId(req.params.id) })
+      .exec()
+      .then((image) => {
+        res.json({
+          success: true,
+          data: image,
+        });
+      })
+      .catch((error) => {
+        res.json({
+          success: false,
+          message: error.message,
         });
       });
   },
