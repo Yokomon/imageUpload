@@ -1,12 +1,11 @@
 const router = require("express").Router(),
   errorRoutes = require("./errorRoutes"),
-  imageController = require("../controllers/imageController"),
-  upload = require("../config/multerConfig");
+  videoRoutes = require("./videoRoutes"),
+  imageRoutes = require("./imageRoutes");
 
 router
-  .post("/postImages", upload.any(), imageController.createImage)
-  .get("/getImages", imageController.getImages)
-  .get("/showImage", imageController.showImage)
+  .use("/images", imageRoutes)
+  .use("/videos", videoRoutes)
   .use("/", errorRoutes);
 
 module.exports = router;
