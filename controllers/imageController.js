@@ -14,9 +14,8 @@ module.exports = {
       if (err) {
         res.json({
           err: err,
-          message: "there was a problem uploading image",
+          message: `There was a problem creating the image because: ${err.message}`,
         });
-        console.log("there was a problem uploading image");
       } else {
         let attempt = {
           imageName: req.files[0].originalname,
