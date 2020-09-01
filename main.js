@@ -22,7 +22,7 @@ app
   .use(express.json())
 
   //Index route
-  .use("/images", router)
+  .use("/", router)
   .set("port", process.env.PORT || 5000)
   .listen(app.get("port"), () => {
     console.log(`Server running at http://localhost:${app.get("port")}`);
