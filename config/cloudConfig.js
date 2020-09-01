@@ -1,5 +1,4 @@
 require("dotenv").config();
-const ObjectId = require("mongodb").ObjectID;
 const cloudinary = require("cloudinary");
 
 cloudinary.config({
@@ -9,7 +8,6 @@ cloudinary.config({
 });
 
 exports.uploads = (file) => {
-  var styleid = new ObjectId();
   return new Promise((resolve) => {
     cloudinary.uploader.upload(
       file,
